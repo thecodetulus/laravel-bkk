@@ -14,27 +14,27 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview menu-open">
-          <a href="{{ url('/') }}">
+        <li>
+          <a href="{{ url('/dashboard') }}">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li class="active treeview menu-open">
-          <a href="{{ url('alumni.index') }}">
-            <i class="fa fa-graduation-cap"></i> <span>Alumni</span>
-          </a>
+        <li>
+            <a href="{{ url('/alumni') }}">
+                <i class="fa fa-graduation-cap"></i> <span>Alumni</span>
+            </a>
         </li>
-        <li class="active treeview menu-open">
+        <li>
           <a href="{{ url('/mitra') }}">
             <i class="fa fa-building-o"></i> <span>Mitra</span>
           </a>
         </li>
-        <li class="active treeview menu-open">
+        <li>
           <a href="{{ url('/jurusan') }}">
             <i class="fa fa-graduation-cap"></i> <span>Jurusan</span>
           </a>
         </li>
-        <li class="active treeview menu-open">
+        <li>
           <a href="{{ url('/lowongan') }}">
             <i class="fa fa-briefcase"></i> <span>Lowongan</span>
           </a>
