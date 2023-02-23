@@ -37,20 +37,20 @@
                                                     <label for="id_admin" class="col-sm-3">Admin :</label>
                                                     <div class="col-sm-7">
                                                         <select name="id_admin" id="id_admin" class="form-control">
-                                                          <option value="">Admin</option>
+                                                          <option value="">= Pilih Admin =</option>
                                                           @foreach ($admin as $a)
-                                                              <option value="{{ $a->id_admin }}">{{ $a->id_admin }}</option>
+                                                              <option value="{{ $a->id_admin }}">{{ $a->nama_admin }}</option>
                                                           @endforeach
                                                         </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="mitra" class="col-sm-3">Mitra :</label>
+                                                    <label for="id_mitra" class="col-sm-3">Mitra :</label>
                                                     <div class="col-sm-7">
                                                       <select name="id_mitra" id="id_mitra" class="form-control">
-                                                        <option value="">Mitra</option>
+                                                        <option value="">= Pilih Mitra =</option>
                                                         @foreach ($mitra as $m)
-                                                            <option value="{{ $m->nama_mitra }}">{{ $m->nama_mitra }}</option>
+                                                            <option value="{{ $m->id_mitra }}">{{ $m->nama_mitra }}</option>
                                                         @endforeach
                                                       </select>
                                                     </div>
@@ -86,9 +86,13 @@
                                                 <div class="form-group">
                                                     <label for="bidang" class="col-sm-3">Bidang :</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="bidang"
-                                                            name="bidang" required>
-                                                    </div>
+                                                        <select name="bidang" id="bidang" class="form-control" required>
+                                                            <option value="">Pilih Bidang</option>
+                                                            @foreach ($mitra as $m)
+                                                                <option value="{{ $m->bidang }}">{{ $m->bidang }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div> 
                                                 </div>
                                             </div>
                                         </div>
@@ -157,6 +161,10 @@
                                                     @csrf
                                                     @method('PUT')
                                                     <div class="modal-body">
+                                                        <div class="box box-info">
+                                                            <div class="box-header with-border">
+                                                            </div>
+                                                            <div class="box-body">
                                                         <div class="form-group">
                                                             <label for="id_admin">Nama Admin</label>
                                                             <select name="id_admin" id="id_admin" class="form-control">
@@ -166,12 +174,13 @@
                                                           @endforeach
                                                           </select>
                                                         </div>
+                                                        </div>
                                                         <div class="form-group">
                                                             <label for="id_mitra">Nama Mitra</label>
                                                             <select name="id_mitra" id="id_mitra" class="form-control">
                                                           <option value="">{{ $l->id_mitra }}</option>
                                                           @foreach ($mitra as $m)
-                                                              <option value="{{ $l->id_mitra }}">{{ $l->id_mitra }}</option>
+                                                              <option value="{{ $m->id_mitra }}">{{ $m->id_mitra }}</option>
                                                           @endforeach
                                                           </select>
                                                         </div>
@@ -199,10 +208,15 @@
                                                                 name="keterangan" value="{{ $l->keterangan }}" required>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="bidang">Bidang</label>
-                                                            <input type="text" class="form-control" id="bidang"
-                                                                name="bidang" value="{{ $l->bidang }}"
-                                                                required>
+                                                            <label for="bidang" class="col-sm-3">Bidang :</label>
+                                                            <div class="col-sm-7">
+                                                                <select name="bidang" id="bidang" class="form-control" required>
+                                                                    <option value="">Pilih bidang</option>
+                                                                    @foreach ($mitra as $m)
+                                                                        <option value="{{ $m->bidang }}">{{ $m->bidang }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
