@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('alamat_mitra');
             $table->string('telepon');
             $table->string('email');
-            $table->unsignedInteger('bidang');
+            $table->string('bidang');
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });

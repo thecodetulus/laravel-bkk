@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
+Route::get('/login', function () {
     return view('login.login');
 });
 
@@ -29,3 +29,7 @@ Route::get('/alumni', [AlumniController::class, 'index'])->name('alumni.index');
 Route::get('/mitra', [MitraController::class, 'index'])->name('mitra.index');
 Route::get('/jurusan', [JurusanController::class, 'index'])->name('jurusan.index');
 Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan.index');
+
+Route::resource('/jurusan', JurusanController::class);
+Route::resource('/mitra', MitraController::class);
+Route::resource('/lowongan', LowonganController::class);

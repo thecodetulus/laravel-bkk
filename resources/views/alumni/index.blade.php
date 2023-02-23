@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+    alumni
+@endsection
+
 @section('content')
 
 <!-- Main content -->
