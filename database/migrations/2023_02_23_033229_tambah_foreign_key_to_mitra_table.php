@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::table('mitra', function (Blueprint $table) {
             $table->foreign('bidang')
             ->references('bidang')
-            ->on('jurusan');
+            ->on('jurusan')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 
