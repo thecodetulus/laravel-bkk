@@ -23,6 +23,10 @@ return new class extends Migration
             ->on('admin')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+
+            $table->foreign('bidang')
+            ->references('bidang')
+            ->on('mitra');
         });
     }
 
@@ -32,7 +36,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('lowongan', function (Blueprint $table) {
-            $table->dropForeign('lowongan_id_mitra_id_admin_foreign');
+            $table->dropForeign('lowongan_id_mitra_id_admin_bidang_foreign');
         });
     }
 };

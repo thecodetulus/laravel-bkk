@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('tgl_lowongan');
             $table->date('tgl_habis');
             $table->text('keterangan');
-            $table->string('bidang');
+            $table->string('bidang')->index();
             $table->timestamps();
         });
     }

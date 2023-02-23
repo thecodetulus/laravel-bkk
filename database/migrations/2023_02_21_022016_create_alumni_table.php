@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('alumni', function (Blueprint $table) {
-            $table->string('nis');
+            $table->integer('nis')->unique();
             $table->unsignedInteger('id_jurusan');
             $table->string('nama_alumni');
             $table->string('tempat_lahir');
@@ -24,6 +24,7 @@ return new class extends Migration
             $table->enum('status', ['Aktif', 'Tidak Aktif']);
             $table->string('email');
             $table->string('password');
+            $table->timestamps();
             $table->primary(['nis', 'id_jurusan']);
         });
     }

@@ -62,8 +62,12 @@
                                                 <div class="form-group">
                                                     <label for="bidang" class="col-sm-3">Bidang :</label>
                                                     <div class="col-sm-7">
-                                                        <input type="text" class="form-control" id="bidang"
-                                                            name="bidang" required>
+                                                        <select name="bidang" id="bidang" class="form-control" required>
+                                                            <option value="">Pilih Bidang</option>
+                                                            @foreach ($jurusan as $item)
+                                                                <option value="{{ $item->bidang }}">{{ $item->bidang }}</option>
+                                                            @endforeach
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -158,10 +162,15 @@
                                                                 required>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="bidang">Bidang</label>
-                                                            <input type="text" class="form-control" id="bidang"
-                                                                name="bidang" value="{{ $m->bidang }}"
-                                                                required>
+                                                            <label for="bidang" class="col-sm-3">Bidang :</label>
+                                                            <div class="col-sm-7">
+                                                                <select name="bidang" id="bidang" class="form-control" value="{{ $item->bidang }}" required>
+                                                                    <option value="{{ $m->bidang }}">{{ $m->bidang }}</option>
+                                                                    @foreach ($jurusan as $item)
+                                                                        <option value="{{ $item->bidang }}">{{ $item->bidang }}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="keterangan">Keterangan</label>

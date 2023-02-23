@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jurusan;
 use Illuminate\Http\Request;
 use App\Models\Mitra;
 
@@ -10,7 +11,8 @@ class MitraController extends Controller
     public function index()
     {
         $mitra = Mitra::all();
-        return view('mitra.index', compact('mitra'));
+        $jurusan = Jurusan::all();
+        return view('mitra.index', compact('mitra', 'jurusan'));
     }
 
     public function store(Request $request)

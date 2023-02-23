@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('alamat_mitra');
             $table->string('telepon');
             $table->string('email');
-            $table->string('bidang');
+            $table->string('bidang')->index();
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });
