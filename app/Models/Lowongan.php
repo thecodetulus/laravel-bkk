@@ -21,4 +21,14 @@ class Lowongan extends Model
         'keterangan',
         'bidang'
     ];
+
+    public function admin()
+    {
+        return $this->belongsTo(Admin::class, 'id_admin');
+    }
+
+    public function mitra()
+    {
+        return $this->belongsTo(Mitra::class, 'id_mitra');
+    }
 }

@@ -26,7 +26,7 @@ return new class extends Migration
 
             $table->foreign('bidang')
             ->references('bidang')
-            ->on('mitra')
+            ->on('jurusan')
             ->onDelete('cascade')
             ->onUpdate('cascade');
         });

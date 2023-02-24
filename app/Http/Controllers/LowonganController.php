@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Jurusan;
 use Illuminate\Http\Request;
 use App\Models\Lowongan;
 use App\Models\Mitra;
@@ -13,8 +14,9 @@ class LowonganController extends Controller
     {
         $mitra = Mitra::all();
         $admin = Admin::all();
+        $jurusan = Jurusan::all();
         $lowongan = Lowongan::all();
-        return view('lowongan.index', compact('mitra', 'admin', 'lowongan'));
+        return view('lowongan.index', compact('mitra', 'admin', 'lowongan', 'jurusan'));
     }
 
     public function store(Request $request)

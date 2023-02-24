@@ -88,8 +88,8 @@
                                                     <div class="col-sm-7">
                                                         <select name="bidang" id="bidang" class="form-control" required>
                                                             <option value="">Pilih Bidang</option>
-                                                            @foreach ($mitra as $m)
-                                                                <option value="{{ $m->bidang }}">{{ $m->bidang }}</option>
+                                                            @foreach ($jurusan as $j)
+                                                                <option value="{{ $j->bidang }}">{{ $j->bidang }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div> 
@@ -129,8 +129,8 @@
                             @foreach ($lowongan as $l)
                             <tr>
                                 <td>{{ $i }}</td>
-                                <td>{{ $l->id_admin }}</td>
-                                <td>{{ $l->id_mitra }}</td>
+                                <td>{{ $l->admin->nama_admin }}</td>
+                                <td>{{ $l->mitra->nama_mitra }}</td>
                                 <td>{{ $l->nama_lowongan }}</td>
                                 <td>{{ $l->tgl_lowongan }}</td>
                                 <td>{{ $l->tgl_habis }}</td>
@@ -168,9 +168,9 @@
                                                         <div class="form-group">
                                                             <label for="id_admin">Nama Admin</label>
                                                             <select name="id_admin" id="id_admin" class="form-control">
-                                                          <option value="">{{ $l->id_admin }}</option>
+                                                          <option value="{{ $l->id_admin }}"></option>
                                                           @foreach ($admin as $a)
-                                                              <option value="{{ $a->id_admin }}">{{ $a->id_admin }}</option>
+                                                              <option value="{{ $a->id_admin }}">{{ $a->nama_admin }}</option>
                                                           @endforeach
                                                           </select>
                                                         </div>
@@ -180,7 +180,7 @@
                                                             <select name="id_mitra" id="id_mitra" class="form-control">
                                                           <option value="">{{ $l->id_mitra }}</option>
                                                           @foreach ($mitra as $m)
-                                                              <option value="{{ $m->id_mitra }}">{{ $m->id_mitra }}</option>
+                                                              <option value="{{ $m->id_mitra }}">{{ $m->nama_mitra }}</option>
                                                           @endforeach
                                                           </select>
                                                         </div>
@@ -211,12 +211,12 @@
                                                             <label for="bidang" class="col-sm-3">Bidang :</label>
                                                             <div class="col-sm-7">
                                                                 <select name="bidang" id="bidang" class="form-control" required>
-                                                                    <option value="">Pilih bidang</option>
-                                                                    @foreach ($mitra as $m)
-                                                                        <option value="{{ $m->bidang }}">{{ $m->bidang }}</option>
+                                                                <option value="{{ $l->bidang }}"></option>
+                                                                    @foreach ($jurusan as $item)
+                                                                        <option value="{{ $item->bidang }}">{{ $item->bidang }}</option>
                                                                     @endforeach
                                                                 </select>
-                                                            </div>
+                                                            </div> 
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
