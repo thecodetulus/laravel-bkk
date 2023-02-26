@@ -1,0 +1,19 @@
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.tes {
+  border: 1px solid red;
+}
+
+.loker-info p {
+  font-size: 12px;
+  line-height: 18px;
+  margin: 0;
+}
+

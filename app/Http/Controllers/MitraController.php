@@ -25,6 +25,14 @@ class MitraController extends Controller
         return redirect(route('mitra.index'));
     }
 
+    public function edit($id)
+    {
+        $mitra = Mitra::find($id);
+        $jurusan = Jurusan::all();
+
+        return view('mitra.edit', compact('jurusan', 'mitra'));
+    }
+
     public function update(Request $request, Mitra $mitra)
     {
         $mitra->update($request->all());

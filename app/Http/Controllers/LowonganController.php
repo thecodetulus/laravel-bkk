@@ -29,6 +29,16 @@ class LowonganController extends Controller
         return redirect(route('lowongan.index'));
     }
 
+    public function edit($id)
+    {
+        $lowongan = Lowongan::find($id);
+        $admin = Admin::all();
+        $mitra = Mitra::all();
+        $jurusan = Jurusan::all();
+
+        return view('lowongan.edit', compact('jurusan', 'mitra', 'admin', 'lowongan'));
+    }
+
     public function update(Request $request, Lowongan $lowongan)
     {
         $lowongan->update($request->all());

@@ -75,49 +75,7 @@
                                 <td>{{ $j->nama_jurusan }}</td>
                                 <td>{{ $j->bidang }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                                        data-target="#modalEdit{{ $j->id_jurusan }}"><i class="fa fa-edit"></i></button>
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="modalEdit{{ $j->id_jurusan }}" tabindex="-1"
-                                        role="dialog" aria-labelledby="modalEdit{{ $j->id_jurusan }}Label"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="modalEdit{{ $j->id_jurusan }}Label">Edit
-                                                        Jurusan</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <form action="{{ route('jurusan.update', $j->id_jurusan) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <div class="modal-body">
-                                                        <div class="form-group">
-                                                            <label for="nama_jurusan">Nama Jurusan</label>
-                                                            <input type="text" class="form-control" id="nama_jurusan"
-                                                                name="nama_jurusan" value="{{ $j->nama_jurusan }}"
-                                                                required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="bidang">Bidang</label>
-                                                            <input type="text" class="form-control" id="bidang"
-                                                                name="bidang" value="{{ $j->bidang }}" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Update</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <a href="{{ route('jurusan.edit', $j->id_jurusan) }}" class="btn btn-sm btn-primary">Edit</a>
 
                                 </td>
                                 <td>
@@ -126,7 +84,7 @@
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Anda yakin ingin menghapus data ini?')"><i class="fa fa-trash"></i></button>
+                                            onclick="return confirm('Anda yakin ingin menghapus data ini?')">Hapus</button>
                                     </form>
                                 </td>
                             </tr>

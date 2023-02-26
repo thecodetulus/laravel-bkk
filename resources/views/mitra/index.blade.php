@@ -115,78 +115,7 @@
                                 <td>{{ $m->bidang }}</td>
                                 <td>{{ $m->keterangan }}</td>
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
-                                        data-target="#modalEdit{{ $m->id_mitra }}"><i class="fa fa-edit"></i></button>
-
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="modalEdit{{ $m->id_mitra }}" tabindex="-1"
-                                        role="dialog" aria-labelledby="modalEdit{{ $m->id_mitra }}Label"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="modalEdit{{ $m->id_mitra }}Label">Edit
-                                                        Mitra</h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <form action="{{ route('mitra.update', $m->id_mitra) }}"
-                                                    method="POST">
-                                                    @csrf
-                                                    @method('PUT')
-                                                    <div class="modal-body">
-                                                        <div class="form-group">
-                                                            <label for="nama_mitra">Nama Mitra</label>
-                                                            <input type="text" class="form-control" id="nama_mitra"
-                                                                name="nama_mitra" value="{{ $m->nama_mitra }}"
-                                                                required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="alamat_mitra">Alamat Mitra</label>
-                                                            <input type="text" class="form-control" id="alamat_mitra"
-                                                                name="alamat_mitra" value="{{ $m->alamat_mitra }}"
-                                                                required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="telepon">telepon</label>
-                                                            <input type="text" class="form-control" id="telepon"
-                                                                name="telepon" value="{{ $m->telepon }}"
-                                                                required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="email">Email</label>
-                                                            <input type="text" class="form-control" id="email"
-                                                                name="email" value="{{ $m->email }}"
-                                                                required>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="bidang" class="col-sm-3">Bidang :</label>
-                                                            <div class="col-sm-7">
-                                                                <select name="bidang" id="bidang" class="form-control" value="{{ $item->bidang }}" required>
-                                                                    <option value="{{ $m->bidang }}">{{ $m->bidang }}</option>
-                                                                    @foreach ($jurusan as $item)
-                                                                        <option value="{{ $item->bidang }}">{{ $item->bidang }}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="keterangan">Keterangan</label>
-                                                            <input type="text" class="form-control" id="keterangan"
-                                                                name="keterangan" value="{{ $m->keterangan }}" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Update</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <a href="{{ route('mitra.edit', $m->id_mitra) }}" class="btn btn-sm btn-primary">Edit</a>
 
                                 </td>
                                 <td>

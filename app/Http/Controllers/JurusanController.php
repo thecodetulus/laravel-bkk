@@ -23,6 +23,13 @@ class JurusanController extends Controller
         return redirect(route('jurusan.index'));
     }
 
+    public function edit($id)
+    {
+        $jurusan = Jurusan::find($id);
+
+        return view('jurusan.edit', compact('jurusan'));
+    }
+
     public function update(Request $request, Jurusan $jurusan)
     {
         $jurusan->update($request->all());
