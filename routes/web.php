@@ -6,6 +6,7 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LowonganController;
 use App\Http\Controllers\MitraController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,9 @@ Route::controller(LoginController::class)->group(function (){
     Route::post('/login', 'proses');
     Route::get('/logout', 'logout')->name('logout');
 });
+
+Route::get('/register', [RegisterController::class, 'index'])->name('alumni.register');
+Route::post('/register', [RegisterController::class, 'store']);
 
 Route::group(['middleware' => 'auth'], function (){
     Route::get('/dashboard', [LayoutController::class, 'index'])->name('layout.index');

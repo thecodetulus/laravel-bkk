@@ -21,9 +21,10 @@ return new class extends Migration
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->integer('tahun_lulus');
             $table->string('telepon');
-            $table->enum('status', ['Aktif', 'Tidak Aktif']);
+            $table->enum('status', ['Belum Menikah', 'Menikah']);
             $table->string('email');
             $table->string('password');
+            $table->string('foto')->nullable();
             $table->timestamps();
             $table->primary(['nis', 'id_jurusan']);
         });
